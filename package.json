@@ -1,7 +1,7 @@
 {
-  "name": "project-single-page",
+  "name": "basic",
   "version": "1.0.0",
-  "description": "projeto base",
+  "description": "Projeto base para desenvolvimento",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/Claudiogoncalves/project-single-page.git"
   },
-  "author": "claudio roberto",
-  "license": "ISC",
+  "author": "Claudio Roberto",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Claudiogoncalves/project-single-page/issues"
   },
-  "homepage": "https://github.com/Claudiogoncalves/project-single-page#readme",
-  "devDependencies": {    
+  "homepage": "https://github.com/Claudiogoncalves/project-single-page#readme"
 }
