@@ -30,6 +30,20 @@ gulp.task('thor', function() {
         .pipe(browserSync.stream());
 });
 
+gulp.task('buildjs', function() {
+    return gulp.src([
+        './source/components/jquery/dist/jquery.js', 
+        './source/components/jquery-mobile/jquery.mobile.custom.js'
+        ])
+    .pipe(gulp.dest('./dist/js'))
+});
+
+//movendo fonts para pasta dist 
+gulp.task('move-fonts', function() {
+    return gulp.src('./source/components/components-font-awesome/fonts/**')
+        .pipe(gulp.dest('./dist/fonts'));
+})
+
 //movendo arquivos js para pasta dist
 gulp.task('aquaman', function() {
 	return gulp.src('./source/js/*.js')
@@ -43,4 +57,4 @@ gulp.task('demolidor', function() {
 });
 
 //startando todas as tarefas so com o comando gulp
-gulp.task('default',['serve','thor','aquaman','demolidor']);
+gulp.task('default',['buildjs','serve','thor','aquaman','demolidor']);
