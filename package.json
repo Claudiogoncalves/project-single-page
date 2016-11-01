@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/Claudiogoncalves/project-single-page/issues"
   },
-  "homepage": "https://github.com/Claudiogoncalves/project-single-page#readme"
+  "homepage": "https://github.com/Claudiogoncalves/project-single-page#readme",
+  "devDependencies": {    
 }
