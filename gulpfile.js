@@ -41,16 +41,16 @@ gulp.task('move-fonts', function() {
 })
 
 //movendo arquivos js para pasta dist
-gulp.task('aquaman', function() {
+gulp.task('compila-js', function() {
 	return gulp.src('./source/js/*.js')
 	.pipe(gulp.dest('./dist/js/'));
 });
 
 //compila o projeto e mostra erros e para o processo
-gulp.task('demolidor', function() {
+gulp.task('watch', function() {
 	gulp.watch('./source/sass/**/*.scss',['sass']);
-	gulp.watch('./source/js/**/*.js',['aquaman']);
+	gulp.watch('./source/js/**/*.js',['compila-js']);
 });
 
 //startando todas as tarefas so com o comando gulp
-gulp.task('default',['buildjs','serve','sass','aquaman','demolidor']);
+gulp.task('default',['buildjs','serve','sass','compila-js','watch']);
