@@ -5,22 +5,18 @@ var sass = require("gulp-sass");
 var notify = require("gulp-notify");
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['thor'], function() {
+gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
-        server: {
-        	baseDir:"./"
-        },
-        browser:'chrome'
+        server: "./"
     });
 
-    gulp.watch('./source/sass/**/*.scss',['thor']);
-	gulp.watch('./source/js/**/*.js',['aquaman']);    
-    gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch("./scss/*.scss", ['sass']);
+    gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers
-gulp.task('thor', function() {
+gulp.task('sass', function() {
     return gulp.src('./source/sass/**/*.scss')
         //comprimindo css
 		.pipe(sass({outputStyle:'compressed'}))
@@ -52,9 +48,9 @@ gulp.task('aquaman', function() {
 
 //compila o projeto e mostra erros e para o processo
 gulp.task('demolidor', function() {
-	gulp.watch('./source/sass/**/*.scss',['thor']);
+	gulp.watch('./source/sass/**/*.scss',['sass']);
 	gulp.watch('./source/js/**/*.js',['aquaman']);
 });
 
 //startando todas as tarefas so com o comando gulp
-gulp.task('default',['buildjs','serve','thor','aquaman','demolidor']);
+gulp.task('default',['buildjs','serve','sass','aquaman','demolidor']);
